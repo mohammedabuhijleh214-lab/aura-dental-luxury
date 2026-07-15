@@ -1,0 +1,1323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://images.unsplash.com data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="description" content="Aura Dental Clinic luxury concept landing page, designed and secured by Mohammed Abu Hijleh, Cyber Warden.">
+  <title>Aura Dental Clinic | Cyber Luxury Smile Atelier</title>
+  <style>
+    :root {
+      --obsidian: #020407;
+      --ink: #050a0f;
+      --panel: rgba(7, 16, 23, .72);
+      --panel-strong: rgba(5, 11, 17, .92);
+      --line: rgba(180, 255, 255, .16);
+      --line-strong: rgba(116, 247, 255, .34);
+      --platinum: #edf8f7;
+      --muted: rgba(237, 248, 247, .68);
+      --dim: rgba(237, 248, 247, .42);
+      --teal: #61f8ff;
+      --cyan: #00d8ff;
+      --gold: #d9b56a;
+      --gold-soft: #ffe3a2;
+      --danger: #ff5570;
+      --ok: #59ffad;
+      --radius: 8px;
+      --shadow: 0 28px 90px rgba(0, 0, 0, .58);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 12% 4%, rgba(0, 216, 255, .19), transparent 30rem),
+        radial-gradient(circle at 90% 12%, rgba(217, 181, 106, .13), transparent 28rem),
+        linear-gradient(180deg, #020407 0%, #04080d 45%, #010204 100%);
+      color: var(--platinum);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: linear-gradient(transparent 50%, rgba(255,255,255,.018) 50%);
+      background-size: 100% 4px;
+      opacity: .45;
+      mix-blend-mode: screen;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    section, header, footer, nav, main { position: relative; z-index: 3; }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .wide {
+      width: min(1440px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .display {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+      font-weight: 500;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.6rem);
+      line-height: .95;
+      max-width: 860px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      line-height: 1.78;
+      font-size: 15px;
+      max-width: 690px;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.025)),
+        var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .hairline {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(97,248,255,.46), rgba(217,181,106,.34), transparent);
+      opacity: .85;
+    }
+
+    .dev-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(97,248,255,.28);
+      background: rgba(97,248,255,.075);
+      color: var(--teal);
+      border-radius: 999px;
+      padding: 7px 12px;
+      box-shadow: 0 0 24px rgba(0,216,255,.15);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      white-space: nowrap;
+    }
+
+    .dev-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(217,181,106,.72);
+      background: rgba(217,181,106,.11);
+      color: var(--gold-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0 22px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--gold-soft));
+      color: #021016;
+      box-shadow: 0 18px 54px rgba(0,216,255,.24), 0 12px 42px rgba(217,181,106,.16);
+    }
+    .btn-ghost {
+      color: var(--platinum);
+      border-color: rgba(237,248,247,.18);
+      background: rgba(255,255,255,.045);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(97,248,255,.5);
+      box-shadow: 0 14px 36px rgba(0,216,255,.12);
+    }
+
+    .nav {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: min(1180px, calc(100% - 28px));
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(3, 7, 11, .68);
+      backdrop-filter: blur(24px);
+      border-radius: 999px;
+      padding: 10px 12px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      transition: padding .2s ease, background .2s ease;
+    }
+
+    .nav.scrolled { padding: 7px 10px; background: rgba(3, 7, 11, .88); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: max-content; }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(from 180deg, var(--teal), var(--gold), var(--teal));
+      color: #061013;
+      font-family: Georgia, serif;
+      font-weight: 800;
+      box-shadow: 0 0 32px rgba(97,248,255,.28);
+    }
+    .brand span:last-child { font-size: 13px; font-weight: 900; letter-spacing: .18em; }
+    .nav-links { display: flex; align-items: center; gap: 4px; }
+    .nav-links a {
+      color: rgba(237,248,247,.66);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 11px 12px;
+      border-radius: 999px;
+      transition: color .2s ease, background .2s ease;
+    }
+    .nav-links a:hover { color: var(--teal); background: rgba(97,248,255,.075); }
+    .menu-btn { display: none; }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding: 120px 0 46px;
+      isolation: isolate;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      overflow: hidden;
+    }
+
+    .hero-bg img {
+      filter: saturate(1.05) contrast(1.08) brightness(.58);
+      transform: scale(1.04);
+      animation: heroDrift 18s ease-in-out infinite alternate;
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(2,4,7,.94) 0%, rgba(2,4,7,.74) 39%, rgba(2,4,7,.22) 74%, rgba(2,4,7,.86) 100%),
+        linear-gradient(180deg, rgba(2,4,7,.24), #020407 93%);
+    }
+
+    @keyframes heroDrift {
+      from { transform: scale(1.04) translate3d(0,0,0); }
+      to { transform: scale(1.12) translate3d(-1.6%, -1.2%, 0); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 400px;
+      gap: 36px;
+      align-items: end;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.2rem, 10.5vw, 9.2rem);
+      line-height: .82;
+      max-width: 940px;
+      text-shadow: 0 18px 60px rgba(0,0,0,.6);
+    }
+
+    .hero-copy {
+      max-width: 675px;
+      margin: 24px 0 0;
+      color: rgba(237,248,247,.76);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      line-height: 1.72;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 46px;
+      max-width: 720px;
+    }
+
+    .stat {
+      min-height: 108px;
+      border-radius: var(--radius);
+      padding: 17px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stat::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(97,248,255,.34), transparent, rgba(217,181,106,.28));
+      opacity: .5;
+      pointer-events: none;
+    }
+
+    .stat b { display: block; font-size: 1.6rem; color: var(--gold-soft); }
+    .stat span { display: block; color: var(--dim); font-size: 12px; line-height: 1.5; margin-top: 7px; }
+
+    .orbit-card {
+      align-self: center;
+      min-height: 530px;
+      border-radius: var(--radius);
+      padding: 18px;
+      transform-style: preserve-3d;
+      transition: transform .2s ease;
+      overflow: hidden;
+    }
+
+    .orbit-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(97,248,255,.28), transparent 12rem),
+        linear-gradient(135deg, rgba(217,181,106,.12), transparent);
+      opacity: .9;
+      pointer-events: none;
+    }
+
+    .orbit-top { position: relative; height: 292px; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.12); }
+    .orbit-top img { filter: saturate(1.08) contrast(1.08) brightness(.84); }
+    .scanline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--teal), var(--gold), transparent);
+      box-shadow: 0 0 24px var(--teal);
+      animation: scan 3.2s ease-in-out infinite;
+    }
+
+    @keyframes scan {
+      0%, 100% { transform: translateY(0); opacity: .15; }
+      45%, 60% { opacity: 1; }
+      50% { transform: translateY(292px); }
+    }
+
+    .holo-panel {
+      position: relative;
+      margin-top: 14px;
+      border: 1px solid rgba(97,248,255,.2);
+      background: rgba(0,0,0,.28);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .holo-row { display: flex; justify-content: space-between; gap: 12px; color: var(--dim); font-size: 12px; margin-bottom: 12px; }
+    .holo-row b { color: var(--platinum); }
+    .meter { height: 8px; border-radius: 999px; background: rgba(255,255,255,.08); overflow: hidden; }
+    .meter span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: inherit; animation: meter 2.8s ease-in-out infinite alternate; }
+    @keyframes meter { from { width: 68%; } to { width: 96%; } }
+
+    .floating-chip {
+      position: absolute;
+      z-index: 4;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(2, 8, 13, .74);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      padding: 10px 13px;
+      color: rgba(237,248,247,.78);
+      font-size: 11px;
+      box-shadow: 0 18px 46px rgba(0,0,0,.34);
+      animation: floaty 6s ease-in-out infinite;
+    }
+    .chip-a { top: 24%; right: 7%; }
+    .chip-b { top: 55%; left: 5%; animation-delay: -2s; }
+    .chip-c { bottom: 15%; right: 12%; animation-delay: -4s; }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-13px); } }
+
+    .marquee {
+      overflow: hidden;
+      border-block: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.025);
+      padding: 14px 0;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 28px;
+      width: max-content;
+      animation: marquee 26s linear infinite;
+    }
+    .marquee span {
+      color: rgba(237,248,247,.54);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .marquee span strong { color: var(--gold-soft); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .gallery-section { padding: 104px 0 84px; }
+    .gallery-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(320px, .55fr);
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .gallery-filter { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .filter-btn {
+      border: 1px solid rgba(255,255,255,.13);
+      color: rgba(237,248,247,.68);
+      background: rgba(255,255,255,.035);
+      border-radius: 999px;
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .filter-btn.active { color: #021016; background: linear-gradient(135deg, var(--teal), var(--gold-soft)); border-color: transparent; }
+
+    .masonry {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 96px;
+      gap: 12px;
+    }
+    .tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: #091019;
+      box-shadow: 0 24px 70px rgba(0,0,0,.34);
+      isolation: isolate;
+      transform: translateY(0);
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease, opacity .25s ease;
+    }
+    .tile:hover { transform: translateY(-8px); border-color: rgba(97,248,255,.42); box-shadow: 0 34px 90px rgba(0,216,255,.13); }
+    .tile img { transition: transform .65s ease, filter .35s ease; filter: saturate(.92) contrast(1.1) brightness(.78); }
+    .tile:hover img { transform: scale(1.08); filter: saturate(1.08) contrast(1.13) brightness(.92); }
+    .tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.75));
+    }
+    .tile-meta {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 13px;
+      z-index: 2;
+    }
+    .tile-meta b { display: block; font-size: 14px; }
+    .tile-meta span { display: block; margin-top: 4px; color: rgba(237,248,247,.58); font-size: 11px; }
+    .tile-lg { grid-column: span 5; grid-row: span 4; }
+    .tile-md { grid-column: span 4; grid-row: span 3; }
+    .tile-sm { grid-column: span 3; grid-row: span 2; }
+    .tile-wide { grid-column: span 6; grid-row: span 3; }
+    .tile.hidden-tile { display: none; }
+
+    .services { padding: 108px 0; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 36px;
+    }
+    .service-list { display: grid; gap: 12px; }
+    .service-card {
+      border-radius: var(--radius);
+      padding: 20px;
+      min-height: 132px;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .service-card:hover { transform: translateX(5px); border-color: rgba(97,248,255,.42); }
+    .service-card b { display: block; font-size: 1.05rem; }
+    .service-card p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .service-card .tag { color: var(--gold-soft); font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+
+    .simulator {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 646px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .sim-top { padding: 22px; display: flex; justify-content: space-between; align-items: start; gap: 14px; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .sim-stage {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      touch-action: none;
+      user-select: none;
+      cursor: ew-resize;
+    }
+    .sim-stage img { position: absolute; inset: 0; filter: saturate(.9) contrast(1.12) brightness(.76); }
+    .after-wrap {
+      position: absolute;
+      inset: 0;
+      width: 58%;
+      overflow: hidden;
+      border-right: 2px solid var(--teal);
+      box-shadow: 12px 0 32px rgba(0,216,255,.24);
+    }
+    .after-wrap img {
+      width: 100%;
+      min-width: var(--sim-width, 760px);
+      filter: saturate(1.12) contrast(1.16) brightness(1.02);
+    }
+    .handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 58%;
+      width: 0;
+      pointer-events: none;
+    }
+    .handle::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -25px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--gold-soft));
+      box-shadow: 0 0 40px rgba(97,248,255,.55);
+      transform: translateY(-50%);
+    }
+    .handle::after {
+      content: "< >";
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      color: #021016;
+      font-size: 14px;
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+    .sim-label {
+      position: absolute;
+      top: 18px;
+      z-index: 3;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.58);
+      border-radius: 999px;
+      padding: 8px 11px;
+      color: rgba(237,248,247,.76);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .sim-label.before { right: 18px; }
+    .sim-label.after { left: 18px; color: var(--gold-soft); }
+    .sim-bottom { padding: 18px 22px; border-top: 1px solid rgba(255,255,255,.1); color: var(--dim); font-size: 12px; line-height: 1.7; }
+
+    .testimonials { padding: 108px 0; overflow: hidden; }
+    .testimonial-wall {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 38px;
+    }
+    .review {
+      min-height: 330px;
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .review:nth-child(2n) { transform: translateY(22px); }
+    .review:hover { transform: translateY(-7px); border-color: rgba(217,181,106,.48); }
+    .review-head { display: flex; gap: 12px; align-items: center; }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(97,248,255,.22), rgba(217,181,106,.22));
+      border: 1px solid rgba(255,255,255,.16);
+      color: var(--gold-soft);
+      font-family: Georgia, serif;
+      font-weight: 800;
+      box-shadow: 0 0 34px rgba(0,216,255,.16);
+      flex: 0 0 auto;
+    }
+    .review h3 { margin: 0; font-size: 15px; }
+    .review small { display: block; margin-top: 4px; color: var(--dim); line-height: 1.4; }
+    .badges { display: flex; flex-wrap: wrap; gap: 6px; }
+    .badge {
+      border: 1px solid rgba(97,248,255,.28);
+      color: rgba(237,248,247,.7);
+      background: rgba(97,248,255,.055);
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .review p { margin: 0; color: rgba(237,248,247,.75); font-size: 13px; line-height: 1.78; }
+    .hash {
+      margin-top: auto;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(0,0,0,.28);
+      border-radius: var(--radius);
+      padding: 11px;
+      color: var(--ok);
+      font: 11px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      word-break: break-all;
+    }
+    .review-marquee {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      width: max-content;
+      animation: reviewFlow 40s linear infinite;
+    }
+    .mini-review {
+      width: 330px;
+      border-radius: var(--radius);
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.04);
+      color: rgba(237,248,247,.68);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    @keyframes reviewFlow { to { transform: translateX(-50%); } }
+
+    .booking { padding: 108px 0; }
+    .booking-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 36px;
+    }
+    .form-card, .console-card { border-radius: var(--radius); padding: 22px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    label { display: block; color: rgba(237,248,247,.54); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      background: rgba(0,0,0,.28);
+      color: var(--platinum);
+      padding: 13px 13px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    textarea { resize: vertical; min-height: 92px; }
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(97,248,255,.72);
+      box-shadow: 0 0 0 4px rgba(97,248,255,.08);
+      background: rgba(0,0,0,.4);
+    }
+    input.valid { border-color: rgba(89,255,173,.68); }
+    input.invalid { border-color: rgba(255,85,112,.72); }
+    .hint { min-height: 16px; margin: 6px 0 0; font-size: 11px; color: var(--dim); }
+    .hint.ok { color: var(--ok); }
+    .hint.bad { color: var(--danger); }
+    .form-card .btn { width: 100%; margin-top: 18px; border: 0; }
+
+    .terminal {
+      min-height: 492px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(89,255,173,.06), rgba(0,0,0,.1)),
+        #030609;
+      border: 1px solid rgba(97,248,255,.2);
+      overflow: hidden;
+      box-shadow: inset 0 0 34px rgba(0,216,255,.06), var(--shadow);
+    }
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      color: rgba(237,248,247,.5);
+      font-size: 11px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 16px currentColor; }
+    .dot.red { background: #ff5570; }
+    .dot.gold { background: var(--gold); }
+    .terminal-body {
+      height: 430px;
+      overflow: hidden;
+      padding: 16px;
+      font: 12px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .terminal-body p { margin: 0 0 6px; color: rgba(237,248,247,.46); }
+    .terminal-body p.ok { color: var(--ok); text-shadow: 0 0 14px rgba(89,255,173,.22); }
+    .terminal-body p.warn { color: var(--gold-soft); }
+    .terminal-body p.bad { color: var(--danger); }
+    .terminal-body p.cyan { color: var(--teal); }
+
+    .source { padding: 100px 0; }
+    .source-card { border-radius: var(--radius); overflow: hidden; }
+    .source pre {
+      margin: 0;
+      padding: 22px;
+      overflow: auto;
+      color: rgba(237,248,247,.74);
+      font: 12px/1.7 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: #030609;
+    }
+    .token { color: var(--teal); }
+    .string { color: var(--gold-soft); }
+    .comment { color: rgba(237,248,247,.36); }
+
+    .faq { padding: 98px 0; }
+    .faq-list { display: grid; gap: 10px; margin-top: 32px; max-width: 860px; }
+    .faq-item { border-radius: var(--radius); overflow: hidden; }
+    .faq-q {
+      width: 100%;
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 0;
+      background: transparent;
+      color: var(--platinum);
+      padding: 18px;
+      text-align: left;
+      font-weight: 800;
+    }
+    .faq-icon { color: var(--teal); font-size: 18px; transition: transform .2s ease; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+    .faq-a p { margin: 0; padding: 0 18px 18px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+    .faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+
+    footer {
+      padding: 74px 0 38px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.22));
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, minmax(0, .7fr));
+      gap: 28px;
+    }
+    footer h3, footer h4 { margin: 0 0 14px; }
+    footer p, footer a { color: rgba(237,248,247,.58); font-size: 13px; line-height: 1.8; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin-top: 46px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      flex-wrap: wrap;
+    }
+    .disclaimer {
+      margin-top: 20px;
+      border: 1px solid rgba(217,181,106,.34);
+      background: rgba(217,181,106,.07);
+      border-radius: var(--radius);
+      padding: 16px;
+      color: rgba(237,248,247,.74);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(12px);
+    }
+    .modal.open { display: grid; }
+    .modal-card {
+      width: min(560px, 100%);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .modal-close { position: absolute; top: 12px; right: 12px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: var(--platinum); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1000px) {
+      .nav-links { display: none; }
+      .menu-btn { display: inline-flex; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.04); color: var(--platinum); align-items: center; justify-content: center; }
+      .mobile-panel {
+        position: fixed;
+        z-index: 19;
+        top: 76px;
+        left: 14px;
+        right: 14px;
+        border-radius: var(--radius);
+        padding: 12px;
+        display: none;
+      }
+      .mobile-panel.open { display: grid; gap: 6px; }
+      .mobile-panel a { padding: 13px; color: rgba(237,248,247,.75); border-radius: var(--radius); background: rgba(255,255,255,.035); }
+      .hero-grid, .gallery-head, .services-grid, .booking-grid, .footer-grid { grid-template-columns: 1fr; }
+      .orbit-card { min-height: auto; }
+      .gallery-filter { justify-content: flex-start; }
+      .testimonial-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .review:nth-child(2n) { transform: none; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .wide { width: min(100% - 20px, 1440px); }
+      .hero { padding-top: 104px; }
+      .hero-proof, .field-grid, .testimonial-wall { grid-template-columns: 1fr; }
+      .masonry { grid-auto-rows: 82px; gap: 9px; }
+      .tile-lg, .tile-md, .tile-sm, .tile-wide { grid-column: span 12; grid-row: span 3; }
+      .tile-lg { grid-row: span 4; }
+      .simulator { min-height: auto; }
+      .sim-stage { min-height: 360px; }
+      .footer-bottom { align-items: flex-start; }
+      .dev-link { white-space: normal; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Aura Dental Clinic home">
+        <span class="brand-mark">A</span>
+        <span>AURA DENTAL</span>
+      </a>
+      <div class="nav-links" aria-label="Main links">
+        <a href="#gallery">Gallery</a>
+        <a href="#simulator">Smile AI</a>
+        <a href="#testimonials">Proof</a>
+        <a href="#booking">Secure Booking</a>
+        <a href="#source">Source</a>
+      </div>
+      <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer" aria-label="Open Mohammed Abu Hijleh portfolio in a new tab">Cyber Warden</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">=</button>
+    </div>
+  </nav>
+
+  <div class="mobile-panel glass" id="mobile-panel">
+    <a href="#gallery">Gallery</a>
+    <a href="#simulator">Smile AI</a>
+    <a href="#testimonials">Proof</a>
+    <a href="#booking">Secure Booking</a>
+    <a href="#source">Source</a>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2400&q=90" alt="Luxury dental clinic interior with modern treatment lighting">
+    </div>
+    <span class="floating-chip chip-a">Live biometric-grade input shield</span>
+    <span class="floating-chip chip-b">Digital smile preview active</span>
+    <span class="floating-chip chip-c">Concierge dentistry, encrypted</span>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow reveal">Aura Dental Clinic / Private Smile Atelier</p>
+        <h1 class="display reveal">A cinematic new era of precision dentistry.</h1>
+        <p class="hero-copy reveal">Luxury cosmetic dentistry shaped like a private design studio: digital scans, laser therapy, guided implants, and a client-side security layer crafted by <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Mohammed Abu Hijleh</a>.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#booking">Book the secure consultation</a>
+          <a class="btn btn-ghost" href="#simulator">Try the smile simulator</a>
+        </div>
+        <div class="hero-proof reveal" aria-label="Clinic highlights">
+          <div class="stat glass"><b>0.2mm</b><span>guided digital margin mapping for high-precision cosmetic planning</span></div>
+          <div class="stat glass"><b>4D</b><span>smile design preview with animated facial harmony checkpoints</span></div>
+          <div class="stat glass"><b>24/7</b><span>simulated input monitoring by the Cyber Warden console</span></div>
+        </div>
+      </div>
+      <aside class="orbit-card glass reveal" id="tilt-card" aria-label="Live Aura scan card">
+        <div class="orbit-top">
+          <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=88" alt="Dental procedure with modern clinical technology">
+          <span class="scanline" aria-hidden="true"></span>
+        </div>
+        <div class="holo-panel">
+          <div class="holo-row"><span>Smile design engine</span><b>ONLINE</b></div>
+          <div class="meter" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="holo-panel">
+          <div class="holo-row"><span>Threat model</span><b>AURA-CSP/LOCKED</b></div>
+          <div class="holo-row"><span>Data mode</span><b>Client-side only</b></div>
+          <div class="holo-row"><span>Design credit</span><a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Cyber Warden</a></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><strong>Laser gum sculpting</strong> / digital veneers</span><span>Robotic implant planning</span><span>AI shade mapping</span><span>Private concierge visits</span><span>Client-side sanitizer</span>
+      <span><strong>Laser gum sculpting</strong> / digital veneers</span><span>Robotic implant planning</span><span>AI shade mapping</span><span>Private concierge visits</span><span>Client-side sanitizer</span>
+    </div>
+  </div>
+
+  <main>
+    <section id="gallery" class="gallery-section">
+      <div class="wide">
+        <div class="gallery-head">
+          <div>
+            <p class="eyebrow reveal">Immersive Visual Archive</p>
+            <h2 class="display section-title reveal">A full-spectrum gallery for a clinic that feels engineered from light.</h2>
+            <p class="section-copy reveal">High-contrast medical imagery, dark luxury interiors, precision instruments, and transformation moments arranged as a responsive cinematic wall.</p>
+          </div>
+          <div class="gallery-filter reveal" role="group" aria-label="Filter gallery">
+            <button class="filter-btn active" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="interior">Interiors</button>
+            <button class="filter-btn" type="button" data-filter="tech">Tech</button>
+            <button class="filter-btn" type="button" data-filter="smile">Smiles</button>
+          </div>
+        </div>
+        <div class="masonry" id="masonry">
+          <article class="tile tile-lg reveal" data-kind="interior"><img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1200&q=88" alt="Modern luxury dental chair and treatment room"><div class="tile-meta"><b>Obsidian treatment suite</b><span>soft-lit clinical architecture</span></div></article>
+          <article class="tile tile-md reveal" data-kind="tech"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=88" alt="Advanced dental instruments prepared for treatment"><div class="tile-meta"><b>Micro-instrument array</b><span>sterile precision stack</span></div></article>
+          <article class="tile tile-sm reveal" data-kind="smile"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=88" alt="Confident bright smile close-up"><div class="tile-meta"><b>Porcelain brilliance</b><span>shade calibrated finish</span></div></article>
+          <article class="tile tile-sm reveal" data-kind="tech"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=88" alt="Dental examination using focused light"><div class="tile-meta"><b>Laser focus</b><span>soft-tissue accuracy</span></div></article>
+          <article class="tile tile-wide reveal" data-kind="interior"><img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1300&q=88" alt="Futuristic clinic corridor and medical environment"><div class="tile-meta"><b>Private medical corridor</b><span>arrival sequence</span></div></article>
+          <article class="tile tile-md reveal" data-kind="smile"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1000&q=88" alt="Beautiful natural smile portrait"><div class="tile-meta"><b>Before to confident</b><span>digital smile alignment</span></div></article>
+          <article class="tile tile-sm reveal" data-kind="tech"><img src="https://images.unsplash.com/photo-1593022356769-11f762e25ed9?auto=format&fit=crop&w=900&q=88" alt="Dental tools and advanced medical equipment"><div class="tile-meta"><b>Robotic guidance</b><span>implant planning mode</span></div></article>
+          <article class="tile tile-sm reveal" data-kind="interior"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=88" alt="Dental room with clinical chair and lights"><div class="tile-meta"><b>Quiet operating bay</b><span>concierge comfort</span></div></article>
+          <article class="tile tile-wide reveal" data-kind="smile"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1300&q=88" alt="Luxury beauty portrait with elegant smile"><div class="tile-meta"><b>VIP smile reveal</b><span>camera-ready polish</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline wide"></div>
+
+    <section id="simulator" class="services">
+      <div class="container">
+        <p class="eyebrow reveal">Interactive Smile Simulator</p>
+        <h2 class="display section-title reveal">Drag through the transformation like a digital treatment plan.</h2>
+        <div class="services-grid">
+          <div class="service-list">
+            <article class="service-card glass reveal"><div class="tag">01 / Cosmetic Veneers</div><b>Ultra-thin porcelain, designed from facial motion.</b><p>Preview symmetry, tooth length, and shade temperature before treatment begins.</p></article>
+            <article class="service-card glass reveal"><div class="tag">02 / Guided Implants</div><b>Robotic-level placement planning with surgical calm.</b><p>Digital scans and mapped trajectories reduce guesswork and elevate comfort.</p></article>
+            <article class="service-card glass reveal"><div class="tag">03 / Laser Therapy</div><b>Soft-tissue refinement with minimal downtime.</b><p>Precise gum contouring, desensitization, and healing support in a quieter workflow.</p></article>
+            <article class="service-card glass reveal"><div class="tag">04 / Cyber Booking</div><b>Every keystroke sanitized before confirmation.</b><p>The booking experience is protected by local validation and a visible audit console.</p></article>
+          </div>
+          <div class="simulator glass reveal">
+            <div class="sim-top">
+              <div>
+                <p class="eyebrow" style="margin-bottom:8px">Smile AI / demo</p>
+                <h3 class="display" style="font-size:2rem;margin:0">Before and after preview</h3>
+              </div>
+              <span class="badge">DRAG</span>
+            </div>
+            <div class="sim-stage" id="sim-stage" aria-label="Drag to compare before and after smile images">
+              <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1400&q=88" alt="Before smile simulation portrait">
+              <div class="after-wrap" id="after-wrap"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1400&q=88" alt="After smile simulation portrait"></div>
+              <span class="handle" id="sim-handle"></span>
+              <span class="sim-label after">After</span>
+              <span class="sim-label before">Before</span>
+            </div>
+            <div class="sim-bottom">This is a simulated visual interaction for concept demonstration. Real treatment planning requires an in-person clinical scan and diagnosis.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="wide">
+        <div class="container" style="width: min(1160px, 100%);">
+          <p class="eyebrow reveal">Verified Review Center</p>
+          <h2 class="display section-title reveal">A wall of social proof with Cyber Warden integrity logs.</h2>
+          <p class="section-copy reveal">Fictional luxury-tier reviews for portfolio demonstration. Each card includes a simulated cryptographic hash signature and status badge.</p>
+        </div>
+        <div class="testimonial-wall">
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">EV</span><div><h3>Eleanor Vance</h3><small>Film Producer / Cannes Circle</small></div></div><div class="badges"><span class="badge">Verified VIP</span><span class="badge">5.0</span></div><p>"Aura felt less like a clinic and more like a private design house. The smile preview gave me total confidence before my veneers."</p><div class="hash">sha256:aura-4f9c91e7c3a0e2b8:untampered</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">MS</span><div><h3>Marcus Sterling</h3><small>Founder / Quantum SaaS</small></div></div><div class="badges"><span class="badge">Tech Exec</span><span class="badge">Encrypted</span></div><p>"The live security console sold me immediately. I could see the same obsession with precision in the interface and in the treatment."</p><div class="hash">sha256:aura-99b2a11df72e0ac4:locked</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">NA</span><div><h3>Nadia Albright</h3><small>Luxury Hospitality Director</small></div></div><div class="badges"><span class="badge">Concierge</span><span class="badge">5.0</span></div><p>"Every detail was orchestrated: lighting, privacy, timing, recovery. My final smile looked natural on camera and in real life."</p><div class="hash">sha256:aura-c7e2d1a904be8810:verified</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">KR</span><div><h3>Kai Ren</h3><small>AI Robotics Investor</small></div></div><div class="badges"><span class="badge">Implants</span><span class="badge">Guided</span></div><p>"The implant mapping was astonishingly clear. It felt like a surgical dashboard designed by someone who understands trust."</p><div class="hash">sha256:aura-2bc40da0f82f77ec:green</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">SA</span><div><h3>Sophia Aster</h3><small>Recording Artist</small></div></div><div class="badges"><span class="badge">Camera Ready</span><span class="badge">5.0</span></div><p>"I needed a subtle upgrade before a tour. The shade work was perfect: bright, clean, and still completely mine."</p><div class="hash">sha256:aura-d190c8a3eff52a71:sealed</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">JL</span><div><h3>Jonas Leclerc</h3><small>Private Equity Partner</small></div></div><div class="badges"><span class="badge">Discreet</span><span class="badge">Laser</span></div><p>"No waiting-room theater. No noise. Just an elegant process, a calm team, and a result that changed how I show up."</p><div class="hash">sha256:aura-79f4bd13e550aa01:clear</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">AM</span><div><h3>Ari Morgan</h3><small>Cybersecurity Architect</small></div></div><div class="badges"><span class="badge">Security Minded</span><span class="badge">CSP</span></div><p>"I came for whitening and stayed impressed by the front-end security sandbox. Cyber Warden energy, clinically executed."</p><div class="hash">sha256:aura-0ef31a90dd72b45c:ok</div></article>
+          <article class="review glass reveal"><div class="review-head"><span class="avatar">LC</span><div><h3>Lina Crest</h3><small>Fashion House CEO</small></div></div><div class="badges"><span class="badge">Veneers</span><span class="badge">VIP</span></div><p>"The final proportions looked editorial without being artificial. I have never seen dentistry presented with this level of taste."</p><div class="hash">sha256:aura-bb83a4fe173d6f90:signed</div></article>
+        </div>
+        <div class="review-marquee" aria-hidden="true">
+          <div class="mini-review">AURA-SEC: review packet verified / signature OK / concierge profile sealed.</div>
+          <div class="mini-review">Digital smile map approved / shade delta reduced / client confidence rising.</div>
+          <div class="mini-review">Laser recovery report: calm tissue response / low downtime / high satisfaction.</div>
+          <div class="mini-review">Booking sanitizer active / tags stripped / pattern match accepted.</div>
+          <div class="mini-review">AURA-SEC: review packet verified / signature OK / concierge profile sealed.</div>
+          <div class="mini-review">Digital smile map approved / shade delta reduced / client confidence rising.</div>
+          <div class="mini-review">Laser recovery report: calm tissue response / low downtime / high satisfaction.</div>
+          <div class="mini-review">Booking sanitizer active / tags stripped / pattern match accepted.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline wide"></div>
+
+    <section id="booking" class="booking">
+      <div class="container">
+        <p class="eyebrow reveal">Advanced Live Dashboard Console</p>
+        <h2 class="display section-title reveal">Book inside a real-time security theater.</h2>
+        <p class="section-copy reveal">The form below is a front-end demo: it sanitizes locally, validates key fields, and streams simulated network defense logs into the dashboard.</p>
+        <div class="booking-grid">
+          <form class="form-card glass reveal" id="booking-form" novalidate>
+            <div class="field-grid">
+              <div><label for="fullname">Full name</label><input id="fullname" name="fullname" autocomplete="name" placeholder="Alex Morgan"><p class="hint" id="fullname-hint"></p></div>
+              <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><p class="hint" id="email-hint"></p></div>
+              <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 123 4567"><p class="hint" id="phone-hint"></p></div>
+              <div><label for="service">Treatment</label><select id="service" name="service"><option>Cosmetic Veneers</option><option>Digital Implants</option><option>Laser Therapy</option><option>Smile Design Preview</option></select></div>
+              <div><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
+              <div><label for="time">Preferred time</label><select id="time" name="time"><option>09:00</option><option>11:00</option><option>14:00</option><option>16:30</option></select></div>
+            </div>
+            <div style="margin-top:14px"><label for="notes">Notes</label><textarea id="notes" name="notes" placeholder="Anything you want the concierge team to know"></textarea></div>
+            <button class="btn btn-primary" type="submit">Confirm secure booking</button>
+          </form>
+          <aside class="terminal reveal" aria-label="Live cybersecurity console">
+            <div class="terminal-top"><span class="dot red"></span><span class="dot gold"></span><span class="dot"></span><span style="margin-left:8px">aura-defense://handshake.log</span><span style="margin-left:auto;color:var(--teal)">LIVE</span></div>
+            <div class="terminal-body" id="form-console"><p class="cyan">[000] AURA-SEC kernel initialized.</p><p>[001] waiting for sanitized input stream...</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="source" class="source">
+      <div class="container">
+        <p class="eyebrow reveal">Developer Console & Source Code Blueprint</p>
+        <h2 class="display section-title reveal">The padlock has a signature.</h2>
+        <p class="section-copy reveal">Designed, built, and secured by <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Mohammed Abu Hijleh</a> <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Cyber Warden</a>.</p>
+        <div class="source-card glass reveal">
+          <div class="terminal-top"><span class="dot red"></span><span class="dot gold"></span><span class="dot"></span><span style="margin-left:8px">security.js - read only</span><a class="dev-link" style="margin-left:auto" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Portfolio</a></div>
+          <pre><code><span class="comment">// Client-side sanitization. Demo only; production apps still validate server-side.</span>
+<span class="token">function</span> sanitizeInput(raw) {
+  <span class="token">if</span> (typeof raw !== <span class="string">'string'</span>) return <span class="string">''</span>;
+  return raw
+    .replace(/&lt;\s*(script|style)[^&gt;]*&gt;[\s\S]*?&lt;\s*\/\s*\1\s*&gt;/gi, <span class="string">''</span>)
+    .replace(/&lt;\/?[^&gt;]+(&gt;|$)/g, <span class="string">''</span>)
+    .replace(/javascript\s*:/gi, <span class="string">''</span>)
+    .replace(/on\w+\s*=/gi, <span class="string">''</span>)
+    .replace(/\s+/g, <span class="string">' '</span>)
+    .trim();
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="container">
+        <p class="eyebrow reveal">Good to Know</p>
+        <h2 class="display section-title reveal">Frequently asked questions.</h2>
+        <div class="faq-list">
+          <article class="faq-item glass reveal"><button class="faq-q" type="button" aria-expanded="false">Is the smile simulator a diagnosis?<span class="faq-icon">+</span></button><div class="faq-a"><p>No. It is a visual concept widget for exploring direction. A real plan requires a clinical exam, scan, and dentist approval.</p></div></article>
+          <article class="faq-item glass reveal"><button class="faq-q" type="button" aria-expanded="false">Does the booking form submit data?<span class="faq-icon">+</span></button><div class="faq-a"><p>This standalone concept page blocks real transmission. Inputs are sanitized locally, validated, and used only to simulate a confirmation token.</p></div></article>
+          <article class="faq-item glass reveal"><button class="faq-q" type="button" aria-expanded="false">Who designed the original concept?<span class="faq-icon">+</span></button><div class="faq-a"><p>The concept credit belongs to <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Mohammed Abu Hijleh</a>, also presented as <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Cyber Warden</a>.</p></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><h3 class="display" style="font-size:2rem">Aura Dental Clinic</h3><p>Precision-engineered smiles delivered with the discretion of a private atelier and the visual polish of a luxury technology brand.</p></div>
+        <div><h4>Visit</h4><p>220 Meridian Row<br>Uptown Design District</p></div>
+        <div><h4>Contact</h4><p>hello@auradental.example<br>+1 (555) 040-2210</p></div>
+        <div><h4>Designer</h4><p><a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Mohammed Abu Hijleh</a><br><a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Cyber Warden</a></p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aura Dental Clinic concept. All rights reserved.</p>
+        <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Designed, built & secured by Mohammed Abu Hijleh / Cyber Warden</a>
+      </div>
+      <div class="disclaimer"><strong>Notice:</strong> This is a fictional interactive landing page for portfolio demonstration and front-end security testing. No real appointments are booked, no personal data is stored, and all testimonials are mock reviews.</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-title">
+    <div class="modal-card glass" style="position:relative">
+      <button class="modal-close" type="button" id="modal-close" aria-label="Close dialog">x</button>
+      <p class="eyebrow">Secure Handshake Complete</p>
+      <h2 class="display" id="success-title" style="font-size:2.4rem;margin:0">Consultation token minted.</h2>
+      <p class="section-copy">Your simulated booking has been locally validated. Token: <strong id="token-output" style="color:var(--gold-soft)"></strong></p>
+      <a class="dev-link" href="https://mohammedabuhijleh214-lab.github.io/portfolia/" target="_blank" rel="noopener noreferrer">Security layer by Cyber Warden</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const portfolioUrl = 'https://mohammedabuhijleh214-lab.github.io/portfolia/';
+      document.querySelectorAll('.dev-link').forEach(function (link) {
+        link.href = portfolioUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+
+      const nav = document.getElementById('site-nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 24);
+      }, { passive: true });
+
+      const menuBtn = document.getElementById('menu-btn');
+      const mobilePanel = document.getElementById('mobile-panel');
+      menuBtn.addEventListener('click', function () {
+        const open = mobilePanel.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      mobilePanel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobilePanel.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el) { observer.observe(el); });
+
+      const tilt = document.getElementById('tilt-card');
+      tilt.addEventListener('pointermove', function (event) {
+        const rect = tilt.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width;
+        const y = (event.clientY - rect.top) / rect.height;
+        tilt.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+        tilt.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+        tilt.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 6).toFixed(2) + 'deg) rotateY(' + ((x - .5) * 8).toFixed(2) + 'deg)';
+      });
+      tilt.addEventListener('pointerleave', function () {
+        tilt.style.transform = '';
+      });
+
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const tiles = document.querySelectorAll('.tile');
+      filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          const filter = button.dataset.filter;
+          filterButtons.forEach(function (b) { b.classList.toggle('active', b === button); });
+          tiles.forEach(function (tile) {
+            tile.classList.toggle('hidden-tile', filter !== 'all' && tile.dataset.kind !== filter);
+          });
+        });
+      });
+
+      const stage = document.getElementById('sim-stage');
+      const afterWrap = document.getElementById('after-wrap');
+      const handle = document.getElementById('sim-handle');
+      function setSim(pos) {
+        const rect = stage.getBoundingClientRect();
+        const pct = Math.max(4, Math.min(96, ((pos - rect.left) / rect.width) * 100));
+        afterWrap.style.width = pct + '%';
+        handle.style.left = pct + '%';
+        afterWrap.style.setProperty('--sim-width', rect.width + 'px');
+      }
+      stage.addEventListener('pointerdown', function (event) {
+        stage.setPointerCapture(event.pointerId);
+        setSim(event.clientX);
+      });
+      stage.addEventListener('pointermove', function (event) {
+        if (event.buttons || event.pointerType === 'touch') setSim(event.clientX);
+      });
+      window.addEventListener('resize', function () {
+        afterWrap.style.setProperty('--sim-width', stage.getBoundingClientRect().width + 'px');
+      });
+      afterWrap.style.setProperty('--sim-width', stage.getBoundingClientRect().width + 'px');
+
+      function sanitizeInput(raw) {
+        if (typeof raw !== 'string') return '';
+        return raw
+          .replace(/<\s*(script|style)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, '')
+          .replace(/<\/?[^>]+(>|$)/g, '')
+          .replace(/javascript\s*:/gi, '')
+          .replace(/on\w+\s*=/gi, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      const patterns = {
+        fullname: /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,60}$/,
+        email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        phone: /^\+?[0-9\s().-]{7,20}$/
+      };
+
+      const consoleEl = document.getElementById('form-console');
+      let logIndex = 2;
+      function log(text, tone) {
+        logIndex += 1;
+        const p = document.createElement('p');
+        p.className = tone || '';
+        p.textContent = '[' + String(logIndex).padStart(3, '0') + '] ' + text;
+        consoleEl.appendChild(p);
+        while (consoleEl.children.length > 18) consoleEl.removeChild(consoleEl.firstElementChild);
+      }
+      const ambient = [
+        ['CSP directives enforced; remote execution blocked.', 'ok'],
+        ['form perimeter listening on name/email/phone vectors.', 'cyan'],
+        ['simulated packet scan: no outbound network request.', 'ok'],
+        ['hash cache refreshed for testimonial wall.', 'warn'],
+        ['AURA-SEC idle watch active.', '']
+      ];
+      let ambientIndex = 0;
+      setInterval(function () {
+        const row = ambient[ambientIndex % ambient.length];
+        log(row[0], row[1]);
+        ambientIndex += 1;
+      }, 2600);
+
+      function setHint(id, text, state) {
+        const hint = document.getElementById(id + '-hint');
+        hint.textContent = text;
+        hint.className = 'hint ' + (state || '');
+      }
+
+      function validate(id) {
+        const el = document.getElementById(id);
+        const clean = sanitizeInput(el.value);
+        if (clean !== el.value.trim()) {
+          el.value = clean;
+          log(id + ' payload stripped before render.', 'warn');
+        }
+        if (!clean) {
+          el.classList.remove('valid', 'invalid');
+          setHint(id, '', '');
+          return { empty: true, valid: false };
+        }
+        const valid = patterns[id].test(clean);
+        el.classList.toggle('valid', valid);
+        el.classList.toggle('invalid', !valid);
+        setHint(id, valid ? 'Sanitized and pattern verified.' : 'Rejected by strict format policy.', valid ? 'ok' : 'bad');
+        log(id + (valid ? ' accepted by validator.' : ' rejected by validator.'), valid ? 'ok' : 'bad');
+        return { empty: false, valid: valid };
+      }
+
+      ['fullname', 'email', 'phone'].forEach(function (id) {
+        document.getElementById(id).addEventListener('input', function () { validate(id); });
+      });
+      document.getElementById('notes').addEventListener('input', function (event) {
+        const clean = sanitizeInput(event.target.value);
+        if (clean !== event.target.value.trim()) {
+          event.target.value = clean;
+          log('notes field sanitized; markup removed.', 'warn');
+        }
+      });
+
+      const form = document.getElementById('booking-form');
+      const modal = document.getElementById('success-modal');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const results = ['fullname', 'email', 'phone'].map(validate);
+        if (results.some(function (r) { return r.empty || !r.valid; })) {
+          log('submission blocked; required security checks incomplete.', 'bad');
+          return;
+        }
+        log('all required fields sanitized and validated.', 'ok');
+        log('minting simulated appointment token.', 'cyan');
+        setTimeout(function () {
+          document.getElementById('token-output').textContent = 'AURA-' + Math.random().toString(36).slice(2, 7).toUpperCase() + '-' + Date.now().toString(36).slice(-6).toUpperCase();
+          modal.classList.add('open');
+          log('handshake complete; no real network request sent.', 'ok');
+          form.reset();
+          ['fullname', 'email', 'phone'].forEach(function (id) {
+            document.getElementById(id).classList.remove('valid', 'invalid');
+            setHint(id, '', '');
+          });
+        }, 540);
+      });
+
+      document.getElementById('modal-close').addEventListener('click', function () { modal.classList.remove('open'); });
+      modal.addEventListener('click', function (event) {
+        if (event.target === modal) modal.classList.remove('open');
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') modal.classList.remove('open');
+      });
+
+      document.querySelectorAll('.faq-q').forEach(function (button) {
+        button.addEventListener('click', function () {
+          const panel = button.nextElementSibling;
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll('.faq-q').forEach(function (other) {
+            if (other !== button) {
+              other.setAttribute('aria-expanded', 'false');
+              other.nextElementSibling.style.maxHeight = '';
+            }
+          });
+          button.setAttribute('aria-expanded', String(!expanded));
+          panel.style.maxHeight = expanded ? '' : panel.scrollHeight + 'px';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
